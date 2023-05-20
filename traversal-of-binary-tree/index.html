@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="算法,数据结构,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="注意措辞的个人博客">
-<meta name="keywords" content="代雨鹤,注意措辞,IanDai">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IanDai&#39;s Notes">
-<meta property="og:url" content="https://notes.daiyuhe.com/index.html">
+<meta name="description" content="遍历二叉树的迭代实现先序遍历：根-左-右实现思路：使用栈。由于栈是后进先出，所以push的顺序为右-左。  首先入栈root node = 出栈，记录当前值 入栈node.right 入栈node.left 重复2-4，直到栈空1234567891011121314151617181920212223public List&amp;lt;Integer&amp;gt; preorderTraversal(Tree">
+<meta name="keywords" content="算法,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现">
+<meta property="og:url" content="https://notes.daiyuhe.com/traversal-of-binary-tree/index.html">
 <meta property="og:site_name" content="IanDai&#39;s Notes">
-<meta property="og:description" content="注意措辞的个人博客">
+<meta property="og:description" content="遍历二叉树的迭代实现先序遍历：根-左-右实现思路：使用栈。由于栈是后进先出，所以push的顺序为右-左。  首先入栈root node = 出栈，记录当前值 入栈node.right 入栈node.left 重复2-4，直到栈空1234567891011121314151617181920212223public List&amp;lt;Integer&amp;gt; preorderTraversal(Tree">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-18T08:43:23.308Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IanDai&#39;s Notes">
-<meta name="twitter:description" content="注意措辞的个人博客">
+<meta name="twitter:title" content="二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现">
+<meta name="twitter:description" content="遍历二叉树的迭代实现先序遍历：根-左-右实现思路：使用栈。由于栈是后进先出，所以push的顺序为右-左。  首先入栈root node = 出栈，记录当前值 入栈node.right 入栈node.left 重复2-4，直到栈空1234567891011121314151617181920212223public List&amp;lt;Integer&amp;gt; preorderTraversal(Tree">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://notes.daiyuhe.com/">
+  <link rel="canonical" href="https://notes.daiyuhe.com/traversal-of-binary-tree/">
 
 
 
 
 
-  <title>IanDai's Notes</title>
+  <title>二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现 | IanDai's Notes</title>
   
 
 
@@ -146,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,176 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://notes.daiyuhe.com/bucket-convert-to-red-black-tree-when-8-size/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="注意措辞">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/mao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IanDai's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bucket-convert-to-red-black-tree-when-8-size/" itemprop="url">为什么HashMap桶长度超过8才会转换成红黑树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T17:34:56+08:00">
-                2019-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/bucket-convert-to-red-black-tree-when-8-size/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/bucket-convert-to-red-black-tree-when-8-size/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/bucket-convert-to-red-black-tree-when-8-size/" class="leancloud_visitors" data-flag-title="为什么HashMap桶长度超过8才会转换成红黑树">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>百度了一下，感觉能说清楚的并不多，其中有一个非常多的回答是以链表和红黑树的平均查找长度来解释，但是这种解释的所有回答中都没有提到出处，始终让人不能彻底相信。通过查阅官方文档和源码之后，在这里说说我的理解。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/bucket-convert-to-red-black-tree-when-8-size/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -439,9 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/traversal-of-binary-tree/" itemprop="url">二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现</a></h1>
+          <h1 class="post-title" itemprop="name headline">二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现</h1>
         
 
         <div class="post-meta">
@@ -534,8 +365,7 @@
       
 
       
-        
-          <h2 id="遍历二叉树的迭代实现"><a href="#遍历二叉树的迭代实现" class="headerlink" title="遍历二叉树的迭代实现"></a>遍历二叉树的迭代实现</h2><h3 id="先序遍历：根-左-右"><a href="#先序遍历：根-左-右" class="headerlink" title="先序遍历：根-左-右"></a>先序遍历：根-左-右</h3><p>实现思路：使用栈。由于栈是后进先出，所以push的顺序为右-左。</p>
+        <h2 id="遍历二叉树的迭代实现"><a href="#遍历二叉树的迭代实现" class="headerlink" title="遍历二叉树的迭代实现"></a>遍历二叉树的迭代实现</h2><h3 id="先序遍历：根-左-右"><a href="#先序遍历：根-左-右" class="headerlink" title="先序遍历：根-左-右"></a>先序遍历：根-左-右</h3><p>实现思路：使用栈。由于栈是后进先出，所以push的顺序为右-左。</p>
 <ol>
 <li>首先入栈root</li>
 <li>node = 出栈，记录当前值</li>
@@ -545,14 +375,44 @@
 
 </li>
 </ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/traversal-of-binary-tree/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h3 id="中序遍历：左-根-右"><a href="#中序遍历：左-根-右" class="headerlink" title="中序遍历：左-根-右"></a>中序遍历：左-根-右</h3><p>实现思路：使用栈。当前节点有左节点时，入栈左节点。当前节点没有左节点时，记录当前值，然后入栈右节点。</p>
+<ol>
+<li>if root.left != null 转2 else 转4</li>
+<li>入栈root.left</li>
+<li>root = root.left 转1</li>
+<li>node = 出栈，记录当前值</li>
+<li>入栈node.right</li>
+<li>root = node.right</li>
+<li>重复1-6，直到栈空以及root为null<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty() || root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">            stack.push(root);</span><br><span class="line">            root = root.left;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            list.add(node.val);</span><br><span class="line">            root = node.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="后序遍历：左-右-根"><a href="#后序遍历：左-右-根" class="headerlink" title="后序遍历：左-右-根"></a>后序遍历：左-右-根</h3><p>实现思路：使用栈。我们通过根-右-左的方式将每次获取的值保存到列表的第一位，最后得到的结果就会是左-右-根。</p>
+<ol>
+<li>首先入栈root</li>
+<li>node = 出栈，记录当前值到列表第一位</li>
+<li>入栈node.left</li>
+<li>入栈node.right</li>
+<li>重复2-4，直到栈空<br>我们出栈的顺序是根-右-左，由于每次记录到位置0，这样就将顺序反向形成左-右-根。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        list.add(node.val);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            stack.push(node.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            stack.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h3><p>实现思路：使用队列。由于栈的特性使用栈很难搞定层次遍历，我们借用队列的先进先出特性实现二叉树的层次遍历。</p>
+<ol>
+<li>入队root</li>
+<li>node = 出队，记录当前值</li>
+<li>入队node.left</li>
+<li>入队node.right</li>
+<li>重复2-4，直到队列为空<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">levelOrderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = queue.poll();</span><br><span class="line">        list.add(node.val);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            queue.add(node);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            queue.add(node);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="遍历二叉树的递归实现"><a href="#遍历二叉树的递归实现" class="headerlink" title="遍历二叉树的递归实现"></a>遍历二叉树的递归实现</h2><h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorderRecursion</span><span class="params">(List&lt;Integer&gt; list, TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    list.add(root.val);</span><br><span class="line">    preorderRecursion(list, root.left);</span><br><span class="line">    preorderRecursion(list, root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inorderRecursion</span><span class="params">(List&lt;Integer&gt; list, TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    inorderRecursion(list, root.left);</span><br><span class="line">    list.add(root.val);</span><br><span class="line">    inorderRecursion(list, root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postorderRecursion</span><span class="params">(List&lt;Integer&gt; list, TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    postorderRecursion(list, root.left);</span><br><span class="line">    postorderRecursion(list, root.right);</span><br><span class="line">    list.add(root.val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -564,357 +424,63 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    注意措辞
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://notes.daiyuhe.com/traversal-of-binary-tree/" title="二叉树先序、中序、后序、层次遍历的迭代实现以及递归实现">https://notes.daiyuhe.com/traversal-of-binary-tree/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://notes.daiyuhe.com/leetcode-213-house-robber-ii/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="注意措辞">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/mao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IanDai's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/leetcode-213-house-robber-ii/" itemprop="url">LeetCode-213-House-Robber-II</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T09:07:48+08:00">
-                2019-09-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
-
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/leetcode-213-house-robber-ii/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/leetcode-213-house-robber-ii/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/leetcode-213-house-robber-ii/" class="leancloud_visitors" data-flag-title="LeetCode-213-House-Robber-II">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h3 id="House-Robber-II"><a href="#House-Robber-II" class="headerlink" title="House Robber II"></a>House Robber II</h3><p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are <strong>arranged in a circle</strong>. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
-<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police</strong>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/leetcode-213-house-robber-ii/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/leetcode-213-house-robber-ii/" rel="next" title="LeetCode-213-House-Robber-II">
+                <i class="fa fa-chevron-left"></i> LeetCode-213-House-Robber-II
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://notes.daiyuhe.com/clear-linux-mining-virus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="注意措辞">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/mao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IanDai's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/clear-linux-mining-virus/" itemprop="url">一次清除Linux挖矿病毒的经历(sysupdate, networkservice进程)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-05T17:10:06+08:00">
-                2019-09-05
-              </time>
+              <a href="/bucket-convert-to-red-black-tree-when-8-size/" rel="prev" title="为什么HashMap桶长度超过8才会转换成红黑树">
+                为什么HashMap桶长度超过8才会转换成红黑树 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/clear-linux-mining-virus/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/clear-linux-mining-virus/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/clear-linux-mining-virus/" class="leancloud_visitors" data-flag-title="一次清除Linux挖矿病毒的经历(sysupdate, networkservice进程)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>闲来无事准备用服务器搭建个环境玩玩，连上服务器后发现命令行卡的飞起，赶紧使用top看看cpu占用率，这里上前三截图。</p>
-<img src="/clear-linux-mining-virus/cpu.png" title="%CPU">
-
-<p>sysupdate 系统更新？？<br>networkservice 网络服务？？？</p>
-<p>上阿里云管理控制台看看CPU占用率，占用率直接100%，再看看CPU以及内存的记录，已经被占领两三天了，阿里云也没有告警。</p>
-<img src="/clear-linux-mining-virus/cpu_used.png" title="CPU used">
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/clear-linux-mining-virus/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -924,10 +490,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -935,6 +502,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -955,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1053,6 +636,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二叉树的迭代实现"><span class="nav-number">1.</span> <span class="nav-text">遍历二叉树的迭代实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先序遍历：根-左-右"><span class="nav-number">1.1.</span> <span class="nav-text">先序遍历：根-左-右</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历：左-根-右"><span class="nav-number">1.2.</span> <span class="nav-text">中序遍历：左-根-右</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后序遍历：左-右-根"><span class="nav-number">1.3.</span> <span class="nav-text">后序遍历：左-右-根</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次遍历"><span class="nav-number">1.4.</span> <span class="nav-text">层次遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二叉树的递归实现"><span class="nav-number">2.</span> <span class="nav-text">遍历二叉树的递归实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先序遍历"><span class="nav-number">2.1.</span> <span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历"><span class="nav-number">2.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后序遍历"><span class="nav-number">2.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1195,6 +794,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
